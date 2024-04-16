@@ -24,7 +24,7 @@ const OnClickDelete = ( id:number ): void => {
 
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .persons-list {
   margin: 12px 0;
 
