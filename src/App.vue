@@ -1,18 +1,26 @@
 <script setup lang="ts">
-// import HelloWorld from './components/HelloWorld.vue';
-import Payment from './components/Payment.vue';
 </script>
 
 <template>
   <section class="container">
-    <Payment />
+    <router-view />
   </section>
 </template>
 
 <style scoped>
 .container {
-  /* background-color: white; */
-  height: 90vh;
-  width: 90vw;
+  width: 80vw;
+  margin: auto;
+  animation: 3s linear fadeAnime;
+}
+
+@keyframes fadeAnime{
+  0% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+  }
 }
 </style>
