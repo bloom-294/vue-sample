@@ -10,6 +10,14 @@ const props = defineProps<{
   lists: List[]
 }>();
 
+const emits = defineEmits<{
+  (e: "submit", value:string): void;
+}>();
+
+const OnSubmit = (value:string) => {
+  emits("submit", value);
+}
+
 </script>
 
 <template>
