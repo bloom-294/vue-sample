@@ -33,24 +33,23 @@ const OnDelete = (value:string) => {
 </ul>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .list-container-comment {
   margin: 20px auto;
   display: flex;
   color: #F3B8AF;
 
-}
+  &-img {
+    width: 150px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    overflow: hidden;
 
-.list-container-comment-img {
-  width: 150px;
-  aspect-ratio: 1/1;
-  border-radius: 100%;
-  overflow: hidden;
-}
-
-.list-container-comment-img iframe {
-  width: 150px;
-  height: 150px;
-  aspect-ratio: 1/1;
+    iframe {
+      width: 150px;
+      height: 150px;
+      aspect-ratio: 1/1;
+    }
+  }
 }
 </style>
