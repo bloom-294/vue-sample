@@ -22,7 +22,6 @@ const Register = (person: Person) => {
 }
 
 const Delete = (id :number) => {
-  console.log(id);
   persons.value = persons.value.filter((e) => e.id !== id);
 }
 </script>

@@ -78,33 +78,9 @@ const MessageChecker = computed(() => {
   }
 });
 
-// watch(messages, () => {
-//   if (messages.value.length >= 10) {
-//     messages.value = "😣"
-//   } else {
-//     messages.value = messages.value;
-//   }
-// })
-
 const Reset = () => {
   messages.value = "这是好👌";
 }
-
-
-
-// スライドの数が５枚未満だった場合、足りない枚数を追加
-// const commentLength = () => {
-//   if( commentList.length < 5 ){
-//     commentAddNumber.value = 5 - Number(commentList.length);
-//   } else {
-//     commentAddNumber.value = 0;
-//   }
-//   console.log(commentAddNumber.value);
-// }
-
-// const model =  () => {
-//   Swal.fire("SweetAlert2 is working!");
-// }
 
 </script>
 <template>
@@ -123,21 +99,11 @@ const Reset = () => {
         <h2>comment</h2>
         <form action="#">
           <input type="text" placeholder="Could you write your feeling?" class="comment-input" @input="InputHandler" v-model="messages"/>
-          <!-- <button type="button" class="comment-button" @click="commentLength">评论</button> -->
           <button type="button" class="comment-button" @click="Reset">评论</button>
         </form>
         <p class="comment-input-message"> {{ MessageChecker }} </p>
-        <!-- <p class="comment-input-message"> {{ messages }} </p> -->
         
         <ul class="comment-table">
-          <!-- <li class="comment-sentence" v-for=" comments in commentList" :key="comments.id">
-            <p class="comment-sentence-message">我会再去的🚲 {{ comments.message }}</p>
-          </li>
-          <li class="comment-sentence" v-for="key in commentAddNumber" :key="key">
-            <div class="comment-sentence-gif">
-              <iframe src="https://gifmagazine.net/embed/glp/4587905" width="300" height="300" frameBorder="0" class="gifmagazine-embed" allowFullScreen></iframe><p><a href="https://gifmagazine.net/post_images/4587905" target="_blank">via GIFMAGAZINE</a></p>
-            </div>
-          </li> -->
           <li class="comment-sentence" v-for="key in 12" :key="key">
             <div class="comment-sentence-gif">
               <iframe src="https://gifmagazine.net/embed/glp/4587905" width="300" height="300" frameBorder="0" class="gifmagazine-embed" allowFullScreen></iframe><p><a href="https://gifmagazine.net/post_images/4587905" target="_blank">via GIFMAGAZINE</a></p>

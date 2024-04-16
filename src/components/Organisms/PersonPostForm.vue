@@ -41,7 +41,6 @@ const primaryColor = "#BCC597";
   &-input {
     color: #fff;
     border-radius: 30px;
-    // background-color: #BCC597;
     background-color: v-bind(primaryColor);
     width: fit-content;
     
