@@ -12,8 +12,6 @@ const OnModalClose = (flag :Boolean) => {
   } else {
     return;
   }
-
-  console.log(flag);
 }
 
 
@@ -105,7 +103,6 @@ const OnModalClose = (flag :Boolean) => {
     padding: 0;
     margin: 0;
   }
-  
 }
 
 

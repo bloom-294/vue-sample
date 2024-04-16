@@ -28,19 +28,11 @@ const lists = ref<List[]>([
   },
 ]);
 
-// const addComment = ref<List>({
-//   id: "",
-//   comment:"",
-//   iframe:"",
-//   href:""
-// });
-
 const listLastId = ref(0);
 const search = ref("");
 
 const OnSubmit = (comment: string) => {
 
-  // console.table(lists.value[lists.value.length -1].id);
   listLastId.value = Number(lists.value[lists.value.length -1].id);
 
   lists.value = [
@@ -52,13 +44,6 @@ const OnSubmit = (comment: string) => {
       href: "https://gifmagazine.net/post_images/3937585"
     }
   ]
-
-  // addComment.value = {
-  //   id: "",
-  //   comment: "",
-  //   iframe: "",
-  //   href: ""
-  // }
 
   console.table(lists.value);
 }
@@ -88,9 +73,9 @@ const onDelete = (id: string) => {
 }
 
 .list-container ul {
-  margin: auto;
-  padding: 0;
-  width: 80%;
-}
+    margin: auto;
+    padding: 0;
+    width: 80%;
+  }
 
 </style>
