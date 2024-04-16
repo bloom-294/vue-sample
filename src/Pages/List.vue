@@ -62,20 +62,18 @@ const onDelete = (id: string) => {
   </section>
 </template>
 
-<style scoped>
-
+<style scoped lang="scss">
 .list-container {
   background-color: #fff;
   margin: 20px auto;
   width: 80vw;
   border-radius: 30px;
   padding: 30px 0;
+
+  ul {
+      margin: auto;
+      padding: 0;
+      width: 80%;
+    }
 }
-
-.list-container ul {
-    margin: auto;
-    padding: 0;
-    width: 80%;
-  }
-
 </style>
