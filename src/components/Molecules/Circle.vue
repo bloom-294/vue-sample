@@ -4,8 +4,6 @@ import CircleMaterial from "../Atoms/CircleMaterial/CircleMaterial.vue"
 const props = defineProps<{
   flag: boolean,
 }>();
-
-
 </script>
 
 <template>
@@ -13,7 +11,7 @@ const props = defineProps<{
 
     <CircleMaterial object="greenPepper" />
     <CircleMaterial object="okura" /> 
-    
+
   </div>
 </template>
 
