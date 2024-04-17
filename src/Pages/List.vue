@@ -3,8 +3,6 @@ import { ref } from 'vue';
 import { List } from '@/types/types';
 import ListComment from '../components/Molecules/ListComment.vue';
 import ListForm from '../components/Molecules/ListForm.vue';
-import TestButton from "../stories/atoms/TestButton.vue";
-
 
 const lists = ref<List[]>([
   {
@@ -62,8 +60,6 @@ const onDelete = (id: string) => {
     <ListForm  @submit="OnSubmit" v-model="search"/>
     <ListComment :lists="lists" :search="search" @delete="onDelete"/>
   </section>
-
-  <TestButton color="primary" size="small" label="Primary" />
 
 </template>
 
