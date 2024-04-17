@@ -1,17 +1,30 @@
 <script setup lang="ts">
-import CircleMaterial from "../Atoms/CircleMaterial/CircleMaterial.vue"
+import { computed } from 'vue';
+
 
 const props = defineProps<{
-  flag: boolean,
-}>();
+  label?: string,
+  object: "greenPepper" | "okura",
+}>() ;
+
+const classes = computed(() => ({
+  "circle-okura" : props.object == "okura",
+}));
+
+const objectUrl = computed(() => {
+  if(props.object == "greenPepper") {
+    return "https://www.yaohiko.co.jp/isshoumochi/assets/img/index/kv/illusts/pc/1x/b-kv_illust01.png.webp";
+  } else {
+    return "https://www.yaohiko.co.jp/isshoumochi/assets/img/index/kv/illusts/pc/1x/b-kv_illust09.png.webp";
+  }
+});
 </script>
 
 <template>
-  <div :class="[ props.flag ? 'circle-down' : '' ]" >
-
-    <CircleMaterial object="greenPepper" />
-    <CircleMaterial object="okura" /> 
-
+  <div class="circle" :class="classes">
+    <div v-for="key in 10" :key="key">
+      <img class="circle-img" :src="objectUrl" :alt="props.object" />
+    </div>
   </div>
 </template>
 

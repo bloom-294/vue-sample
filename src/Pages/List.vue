@@ -60,6 +60,7 @@ const onDelete = (id: string) => {
     <ListForm  @submit="OnSubmit" v-model="search"/>
     <ListComment :lists="lists" :search="search" @delete="onDelete"/>
   </section>
+
 </template>
 
 <style scoped lang="scss">
