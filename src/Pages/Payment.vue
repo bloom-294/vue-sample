@@ -120,7 +120,7 @@ const Reset = () => {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 h1 {
   width: 50vw;
   padding: 10px 0 20px;
@@ -158,64 +158,86 @@ h2 {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
 
-.comment .comment-svg{
-  position: absolute;
-  transform: translateX(340px) translateY(60px);
-  fill: #fff;
-  width: 200px;
-  height: auto;
-}
+  .comment {
+    &-svg{
+      position: absolute;
+      transform: translateX(340px) translateY(60px);
+      fill: #fff;
+      width: 200px;
+      height: auto;
+    }
 
-.comment .comment-input {
-  background-color: #fff;
-  border: unset;
-  width: 40%;
-  height: 50px;
-  border-radius: 30px;
-  padding: 0 20px;
-  color: #98B9D2;
-}
+    &-input {
+      background-color: #fff;
+      border: unset;
+      width: 40%;
+      height: 50px;
+      border-radius: 30px;
+      padding: 0 20px;
+      color: #98B9D2;
+    }
 
-.comment .comment-button {
-  position: relative;
-  left: -50px;
-  border-radius: 100%;
-  aspect-ratio: 1/1;
-  width: 80px;
-}
+    &-button {
+      position: relative;
+      left: -50px;
+      border-radius: 100%;
+      aspect-ratio: 1/1;
+      width: 80px;
+    }
 
-.comment .comment-input-message {
-  position: relative;
-  top: -220px;
-  left: -100px;
-  margin: 0;
-  padding: 0;
-  color: #98B9D2;
-}
+    &-input-message {
+      position: relative;
+      top: -220px;
+      left: -100px;
+      margin: 0;
+      padding: 0;
+      color: #98B9D2;
+    }
 
-.comment .comment-table {
-  display: flex;
-  padding: 30px 0 0;
-  width: 90%;
-  /* transform: translateX(-12.7%); */
-  animation: 20s linear infinite slideAnime 0.5s both;
-  /* animation: 20s linear infinite slideAnime; */
-}
+    &-table {
+      display: flex;
+      padding: 30px 0 0;
+      width: 90%;
+      animation: 20s linear infinite slideAnime 0.5s both;
+    }
 
-.comment .comment-sentence {
-  margin: 20px 10px;
-  border-radius: 100%;
-  width: 100%;
-  background-color: #fff;
-  min-width: 300px;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-}
+    &-sentence {
+      margin: 20px 10px;
+      border-radius: 100%;
+      width: 100%;
+      background-color: #fff;
+      min-width: 300px;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+    }
 
-.comment .comment-table:hover {
-  animation-play-state: paused;
+    &-table:hover {
+      animation-play-state: paused;
+    }
+
+    &-other {
+      display: flex;
+      margin-left: 20px;
+      transform: translateY(364px) ;
+    }
+
+    &-table:hover~.comment-other{
+      animation: 1.3s linear testAnime;
+      animation-fill-mode: forwards;
+    }
+
+    &-other .comment-other-material {
+      width: 292px;
+      height: 166px;
+      aspect-ratio: 292 /166;
+    }
+
+    &-sentence-message {
+      transform: translateY(20px);
+    }
+
+  }
 }
 
 @keyframes slideAnime {
@@ -228,32 +250,11 @@ h2 {
   }
 }
 
-.comment .comment-other {
-  display: flex;
-  margin-left: 20px;
-  transform: translateY(364px) ;
-}
-
-.comment .comment-table:hover~.comment-other{
-  animation: 1.3s linear testAnime;
-  animation-fill-mode: forwards;
-}
-
-.comment .comment-other .comment-other-material {
-  width: 292px;
-  height: 166px;
-  aspect-ratio: 292 /166;
-}
-
-.comment .comment-sentence-message {
-  transform: translateY(20px);
-}
-
 @keyframes testAnime {
   0% {
     transform: translateY(364px);
   }
-
+  
   70% {
     transform: translateY(-40px);
   }

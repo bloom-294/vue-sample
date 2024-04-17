@@ -40,7 +40,7 @@ const Delete = (id :number) => {
   </div>
 </template>
 
-<style lang="scss" scoped >
+<style scoped lang="scss">
 .persons-container {
   display: flex;
   justify-content: center;

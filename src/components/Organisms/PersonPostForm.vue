@@ -35,9 +35,8 @@ const primaryColor = "#BCC597";
 
 </template>
 
-<style lang="scss" scoped>
-.post-container {
-  
+<style scoped lang="scss">
+.post-container { 
   &-input {
     color: #fff;
     border-radius: 30px;
