@@ -25,7 +25,7 @@ const classes = computed(() => {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 
 .circle-down {
   position: relative;
