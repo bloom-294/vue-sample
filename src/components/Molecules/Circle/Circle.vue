@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import CircleMaterial from "../Atoms/CircleMaterial/CircleMaterial.vue"
+import CircleMaterial from "../../Atoms/CircleMaterial/CircleMaterial.vue"
 
 const props = defineProps<{
   flag: boolean,
