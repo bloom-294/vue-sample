@@ -45,12 +45,6 @@ const objectUrl = computed(() => {
   left: calc(-200px + 50px);
 }
 
-.circle-down {
-  position: relative;
-  top: -320px;
-  right: -550px;
-}
-
 .circle div {
   position: absolute;
   top: 0;
