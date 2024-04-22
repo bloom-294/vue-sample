@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { List } from '../../types/types';
+import Button from '../Atoms/Button/Button.vue';
 
 const search = defineModel();
 
@@ -28,13 +29,28 @@ const OnSubmit = (value:string) => {
 </script>
 
 <template>
-  <form action="#" @submit.prevent="() => OnSubmit(addComments.comment)" >
-    <input type="text" placeholder="test" v-model="addComments.comment" />
-    <button type="submit" >submit</button>
-    <input type="text" name="search" id="search" v-model="search"/>
+  <form action="#" class="list-form" @submit.prevent="() => OnSubmit(addComments.comment)" >
+    <input type="text" placeholder="test" v-model="addComments.comment" class="list-form-add" />
+    <Button text="submit" type="other" size="small" />
+    <input type="text" name="search" id="search" v-model="search" class="list-form-search"/>
   </form>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.list-form {
+  .list-form {
+    &-add {
+      border: 2px solid #000;
+      width: 300px;
+      height: auto;
+      border-radius: 30px;
+      padding: 12px;
+    }
+  }
+  
+  .button {
+    transform: translateX(-30px);
+  }
+}
 
 </style>
