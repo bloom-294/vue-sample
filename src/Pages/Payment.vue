@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, reactive, ref, onMounted } from 'vue';
-import Circle from "../components/Molecules/Circle.vue";
+import Circle from "../components/Molecules/Circle/Circle.vue";
 import Modal from "../components/Molecules/Modal.vue";
 import PaymentContainer from "../components/Organisms/PaymentContainer.vue";
 
