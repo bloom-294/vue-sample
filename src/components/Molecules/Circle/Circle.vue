@@ -11,9 +11,8 @@ const classes = computed(() => {
     return "circle-down";
   } else {
     return;
-  }
-  
-})
+  } 
+});
 </script>
 
 <template>
