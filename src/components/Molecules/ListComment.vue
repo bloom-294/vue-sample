@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { List } from '@/types/types';
+import { List } from '../../types/types';
 
 
 const props = defineProps<{
