@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { List } from '../types/types';
 import ListComment from '../components/Molecules/ListComment.vue';
-import ListForm from '../components/Molecules/ListForm.vue';
+import ListForm from '../components/Molecules/ListForm/ListForm.vue';
 
 const lists = ref<List[]>([
   {

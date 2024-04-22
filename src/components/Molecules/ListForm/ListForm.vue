@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { List } from '../../types/types';
-import Button from '../Atoms/Button/Button.vue';
+import { List } from '../../../types/types';
+import Button from '../../Atoms/Button/Button.vue';
 
 const search = defineModel();
 
