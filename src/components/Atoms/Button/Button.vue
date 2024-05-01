@@ -4,7 +4,7 @@ import { computed } from "vue";
 const props = defineProps<{
   text?: string,
   type?: "primary" | "secondary" | "other",
-  size?: "small" | "medium" | "large"
+  size?: "small" | "medium" | "large",
 }>();
 
 const types = computed(() => {
@@ -31,10 +31,18 @@ const sizes = computed(() => {
 }
 });
 
+const emits = defineEmits<{
+  (e: "onClick"): void;
+}>();
+
+const onClick = () => {
+  emits("onClick");
+};
+
 </script>
 
 <template>
-  <button type="submit" class="button" :class="types, sizes">{{ props.text || "Button" }}</button>
+  <button type="submit" class="button" :class="types, sizes" @click="onClick">{{ props.text || "Button" }}</button>
 </template>
 
 <style scoped lang="scss">
