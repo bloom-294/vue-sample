@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { List } from '../../types/types';
+import Button from '../Atoms/Button/Button.vue';
 
 
 const props = defineProps<{
@@ -26,7 +27,7 @@ const OnDelete = (value:string) => {
       </div>
       <div>
         <p> {{ list.comment }} </p>
-        <button type="button" @click="() => { OnDelete(String(list.id)) }">Delete</button>
+        <Button text="Delete" type="primary" size="small" @onClick="() => { OnDelete(String(list.id)) }"/>
       </div>
     </div>
   </li>
