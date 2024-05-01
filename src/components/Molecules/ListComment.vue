@@ -35,7 +35,7 @@ const OnDelete = (value:string) => {
 
 <style scoped lang="scss">
 .list-container-comment {
-  margin: 20px auto;
+  margin: 20px;
   display: flex;
   color: #F3B8AF;
 
