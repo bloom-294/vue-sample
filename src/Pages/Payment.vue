@@ -90,9 +90,8 @@ const Reset = () => {
     <PaymentContainer  :shoppingList="shoppingList" @click="ClickHandler"/>    
     <Circle :flag=true />
 
-    <Teleport to="body">
       <Modal :modalFlag="modalFlag" :merchandiseName="merchandiseNames" @close="OnModalClose"/>
-    </Teleport>
+
 
       <section class="comment">
         <svg class="comment-svg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="_x34_" x="0" y="0" style="enable-background:new 0 0 800 489.74" version="1.1" viewBox="0 0 800 489.74"><path d="M765.211 121.018c-53.14-104.061-204.595-144.42-481.422-72.262-316.468 82.491-375.766 359.86-25.553 360.07 30.362.018 84.392 3.009 132.853-15.515 0 0 5.685-1.126 14.432-2.518 9.086 25.23 26.801 47.334 49.612 61.474l4.512 14.465c-7.38-26.246-9.305-54.013-5.668-81.031 10.501-.357 20.528-.01 28.412 1.593 60.446 19.198 161.411-6.056 197.073-31.591 104.692-74.963 116.402-174.662 85.749-234.685zM550.945 466.73a194.582 194.582 0 0 0 3.358 10.766l-3.358-10.766z" class="st0"/></svg>

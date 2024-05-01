@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const props = defineProps<{
   modalFlag: Boolean
-  merchandiseName: String
+  merchandiseName?: String,
+  text?: String
 }>();
 
 const emit = defineEmits(["close"]);
@@ -18,19 +19,22 @@ const OnModalClose = (flag :Boolean) => {
 </script>
 
 <template>
+  <Teleport to="body">
   <div v-if="props.modalFlag" >
     <div class="modal-mask" @click="OnModalClose(true)">
-      <Teleport to="body">
         <div class="modal-container" @click="OnModalClose(false)">
           <iframe src="https://gifmagazine.net/embed/glp/2999024" width="300" height="225" frameBorder="0" class="gifmagazine-embed modal-gif" allowFullScreen></iframe><p><a href="https://gifmagazine.net/post_images/2999024" target="_blank" class="modal-link">via GIFMAGAZINE</a></p>
-          <div class="modal-sentence">
+          <div class="modal-sentence" v-if="text == null">
             谢谢🫧 <span> {{ props.merchandiseName }} </span> 也是高兴&nbsp;🎉✨
+          </div>
+          <div class="modal-sentence" v-else>
+           {{ props.text }}
           </div>
           <button type="button" class="modal-button" @click="OnModalClose(true)">OK</button>
         </div>
-      </Teleport>
       </div>
     </div>
+  </Teleport>
 </template>
 
 <style scoped lang="scss">
