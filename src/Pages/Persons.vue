@@ -2,7 +2,7 @@
 
 import { Ref, ref } from 'vue';
 import  { Person } from '../types/types';
-import PersonList from '../components/Organisms/PersonList.vue';
+import PersonList from '../components/Organisms/PersonList/PersonList.vue';
 import PersonPostForm from '../components/Organisms/PersonPostForm.vue';
 
 
