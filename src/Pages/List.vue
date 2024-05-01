@@ -75,6 +75,9 @@ const onDelete = (id: string) => {
       margin: auto;
       padding: 0;
       width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
     }
 }
 </style>
