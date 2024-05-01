@@ -3,7 +3,7 @@
 import { Ref, ref } from 'vue';
 import  { Person } from '../types/types';
 import PersonList from '../components/Organisms/PersonList/PersonList.vue';
-import PersonPostForm from '../components/Organisms/PersonPostForm.vue';
+import PersonPostForm from '../components/Organisms/PersonPostForm/PersonPostForm.vue';
 
 
 const persons: Ref<Person[]> = ref([
