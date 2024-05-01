@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import Button from '../../Atoms/Button/Button.vue';
+
 const inputtingName = ref<string>('');
 const inputtingAge = ref<number>(0);
 
@@ -28,7 +30,7 @@ const primaryColor = "#BCC597";
           <input type="number" name="post-container-input-text" id="post-container-input-text" v-model="inputtingAge" />
           <span>岁</span>
         </div>
-        <button type="button" @click="Register" class="post-container-input-button">购买</button>
+        <Button text="购买" type="secondary" size="small" @click="Register"/>
       </Form>
     </div>
   </div>
