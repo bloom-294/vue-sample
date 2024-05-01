@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Person }  from "../../types/types";
+import { Person }  from "../../../types/types";
 
 defineProps<{
   persons: Person[];
