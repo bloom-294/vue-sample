@@ -2,7 +2,7 @@
 import { computed, reactive, ref, onMounted } from 'vue';
 import Circle from "../components/Molecules/Circle/Circle.vue";
 import Modal from "../components/Molecules/Modal/Modal.vue";
-import PaymentContainer from "../components/Organisms/PaymentContainer.vue";
+import PaymentContainer from "../components/Organisms/PaymentContainer/PaymentContainer.vue";
 
 const shoppingList = ref([
   {
