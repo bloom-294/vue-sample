@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { List } from '../types/types';
-import ListComment from '../components/Molecules/ListComment.vue';
+import ListComment from '../components/Molecules/ListComment/ListComment.vue';
 import ListForm from '../components/Molecules/ListForm/ListForm.vue';
 
 const lists = ref<List[]>([
@@ -70,14 +70,5 @@ const onDelete = (id: string) => {
   width: 80vw;
   border-radius: 30px;
   padding: 30px 0;
-
-  ul {
-      margin: auto;
-      padding: 0;
-      width: 80%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-    }
 }
 </style>

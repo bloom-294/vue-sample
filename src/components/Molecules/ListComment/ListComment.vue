@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { List } from '../../types/types';
-import Button from '../Atoms/Button/Button.vue';
+import { List } from '../../../types/types';
+import Button from '../../Atoms/Button/Button.vue';
 
 
 const props = defineProps<{
@@ -35,6 +35,15 @@ const OnDelete = (value:string) => {
 </template>
 
 <style scoped lang="scss">
+ul {
+      margin: auto;
+      padding: 0;
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
 .list-container-comment {
   margin: 20px;
   display: flex;
