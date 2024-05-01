@@ -2,7 +2,8 @@
 const props = defineProps<{
   modalFlag: Boolean
   merchandiseName?: String,
-  text?: String
+  text?: String,
+  teleportFlag?:boolean,
 }>();
 
 const emit = defineEmits(["close"]);
@@ -14,12 +15,10 @@ const OnModalClose = (flag :Boolean) => {
     return;
   }
 }
-
-
 </script>
 
 <template>
-  <Teleport to="body">
+  <Teleport to="body" :disabled=teleportFlag>
   <div v-if="props.modalFlag" >
     <div class="modal-mask" @click="OnModalClose(true)">
         <div class="modal-container" @click="OnModalClose(false)">
