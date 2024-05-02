@@ -65,10 +65,10 @@ const onDelete = (id: string) => {
 
 <style scoped lang="scss">
 .list-container {
-  background-color: #fff;
   margin: 20px auto;
   width: 80vw;
   border-radius: 30px;
   padding: 30px 0;
+  text-align: center;
 }
 </style>

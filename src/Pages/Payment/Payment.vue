@@ -94,14 +94,16 @@ const Reset = () => {
 
 
       <section class="comment">
-        <svg class="comment-svg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="_x34_" x="0" y="0" style="enable-background:new 0 0 800 489.74" version="1.1" viewBox="0 0 800 489.74"><path d="M765.211 121.018c-53.14-104.061-204.595-144.42-481.422-72.262-316.468 82.491-375.766 359.86-25.553 360.07 30.362.018 84.392 3.009 132.853-15.515 0 0 5.685-1.126 14.432-2.518 9.086 25.23 26.801 47.334 49.612 61.474l4.512 14.465c-7.38-26.246-9.305-54.013-5.668-81.031 10.501-.357 20.528-.01 28.412 1.593 60.446 19.198 161.411-6.056 197.073-31.591 104.692-74.963 116.402-174.662 85.749-234.685zM550.945 466.73a194.582 194.582 0 0 0 3.358 10.766l-3.358-10.766z" class="st0"/></svg>
+        <div class="comment-bubble">
+          <svg class="comment-bubble-svg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="_x34_" x="0" y="0" style="enable-background:new 0 0 800 489.74" version="1.1" viewBox="0 0 800 489.74"><path d="M765.211 121.018c-53.14-104.061-204.595-144.42-481.422-72.262-316.468 82.491-375.766 359.86-25.553 360.07 30.362.018 84.392 3.009 132.853-15.515 0 0 5.685-1.126 14.432-2.518 9.086 25.23 26.801 47.334 49.612 61.474l4.512 14.465c-7.38-26.246-9.305-54.013-5.668-81.031 10.501-.357 20.528-.01 28.412 1.593 60.446 19.198 161.411-6.056 197.073-31.591 104.692-74.963 116.402-174.662 85.749-234.685zM550.945 466.73a194.582 194.582 0 0 0 3.358 10.766l-3.358-10.766z" class="st0"/>
+          </svg>
+          <p class="comment-bubble-message"> {{ MessageChecker }} </p>
+        </div>
         <h2>comment</h2>
         <form action="#">
           <input type="text" placeholder="Could you write your feeling?" class="comment-input" @input="InputHandler" v-model="messages"/>
           <button type="button" class="comment-button" @click="Reset">评论</button>
-        </form>
-        <p class="comment-input-message"> {{ MessageChecker }} </p>
-        
+        </form>        
         <ul class="comment-table">
           <li class="comment-sentence" v-for="key in 12" :key="key">
             <div class="comment-sentence-gif">
@@ -146,7 +148,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   border-radius: 24px;
-  background-color: #fff;
+  text-align: center;
 }
 
 .comment {
@@ -159,12 +161,28 @@ h2 {
   overflow: hidden;
 
   .comment {
-    &-svg{
+
+    &-bubble {
       position: absolute;
-      transform: translateX(340px) translateY(60px);
-      fill: #fff;
-      width: 200px;
-      height: auto;
+      transform: translateX(420px) translateY(50px);
+      height: fit-content;
+      
+      &-svg{
+        fill: #fff;
+        width: 200px;
+        height: auto;
+      }
+
+      &-message {
+      position: relative;
+      top: -80px;
+      left: 0px;
+      margin: 0;
+      padding: 0;
+      color: #98B9D2;
+      z-index: 99999;
+    }
+
     }
 
     &-input {
@@ -183,15 +201,6 @@ h2 {
       border-radius: 100%;
       aspect-ratio: 1/1;
       width: 80px;
-    }
-
-    &-input-message {
-      position: relative;
-      top: -220px;
-      left: -100px;
-      margin: 0;
-      padding: 0;
-      color: #98B9D2;
     }
 
     &-table {
