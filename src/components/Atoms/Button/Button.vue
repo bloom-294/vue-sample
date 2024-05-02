@@ -44,7 +44,7 @@
 
 <template>
 	<button
-		type="button"
+		type="submit"
 		class="button"
 		:class="[types, sizes]"
 		@click="onClick">
