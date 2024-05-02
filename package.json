@@ -10,7 +10,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "chromatic",
-    "format": "npx prettier . --write"
+    "format": "npx prettier . --write ./src/*"
   },
   "dependencies": {
     "@storybook/vue3-vite": "^8.0.9",
