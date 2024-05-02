@@ -1,73 +1,73 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: light dark;
-  color: rgb(255 255 255 / 87%);
-  background-color: #EBE9DE;
-  font-synthesis: none;
-  text-rendering: optimizelegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 100vw;
-  overflow-x: hidden;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+	color-scheme: light dark;
+	color: rgb(255 255 255 / 87%);
+	background-color: #ebe9de;
+	font-synthesis: none;
+	text-rendering: optimizelegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	width: 100vw;
+	overflow-x: hidden;
 }
 
 a {
-  text-decoration: inherit;
+	text-decoration: inherit;
 }
 
 a:hover {
-  color: #535bf2;
+	color: #535bf2;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  max-width: 100%;
+	margin: 0;
+	display: flex;
+	place-items: center;
+	min-width: 320px;
+	min-height: 100vh;
+	max-width: 100%;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+	font-size: 3.2em;
+	line-height: 1.1;
 }
 
 button {
-  border: 1px solid transparent;
-  font-family: inherit;
-  cursor: pointer;
+	border: 1px solid transparent;
+	font-family: inherit;
+	cursor: pointer;
 }
 
 input {
-  background-color: #fff;
-  color: #fff;
-  border: unset;
+	background-color: #fff;
+	color: #fff;
+	border: unset;
 }
 
 input:focus {
-  outline: none;
+	outline: none;
 }
 
 li {
-  list-style: none;
+	list-style: none;
 }
 
 .card {
-  padding: 2em;
+	padding: 2em;
 }
 
 #app {
-  margin: 0 auto;
-  text-align: center;
-  width: 100vw;
+	margin: 0 auto;
+	text-align: center;
+	width: 100vw;
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #fff;
-  }
+	:root {
+		color: #213547;
+		background-color: #fff;
+	}
 }
