@@ -1,5 +1,5 @@
-import type { Meta } from "@storybook/vue3"
-import PersonList from "./PersonList.vue"
+import type { Meta } from "@storybook/vue3";
+import PersonList from "./PersonList.vue";
 
 const meta = {
 	title: "Organisms/PersonList",
@@ -8,9 +8,9 @@ const meta = {
 	argTypes: {
 		persons: { control: "object" },
 	},
-} satisfies Meta<typeof PersonList>
+} satisfies Meta<typeof PersonList>;
 
-export default meta
+export default meta;
 
 const persons = [
 	{ id: 0, name: "billy", age: 11 },
@@ -20,10 +20,10 @@ const persons = [
 	{ id: 4, name: "candy", age: 55 },
 	{ id: 5, name: "spector", age: 66 },
 	{ id: 6, name: "steven", age: 77 },
-]
+];
 
 export const Default = {
 	args: {
 		persons: persons,
 	},
-}
+};

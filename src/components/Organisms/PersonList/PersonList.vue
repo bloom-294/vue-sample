@@ -1,15 +1,15 @@
 <script setup lang="ts">
-	import { Person } from "../../../types/types"
+	import { Person } from "../../../types/types";
 
 	defineProps<{
-		persons: Person[]
-	}>()
+		persons: Person[];
+	}>();
 
-	const emit = defineEmits(["delete"])
+	const emit = defineEmits(["delete"]);
 
 	const OnClickDelete = (id: number): void => {
-		emit("delete", id)
-	}
+		emit("delete", id);
+	};
 </script>
 
 <template>

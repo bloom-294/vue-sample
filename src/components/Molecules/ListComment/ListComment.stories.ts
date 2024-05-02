@@ -1,5 +1,5 @@
-import type { Meta } from "@storybook/vue3"
-import ListComment from "../ListComment/ListComment.vue"
+import type { Meta } from "@storybook/vue3";
+import ListComment from "../ListComment/ListComment.vue";
 
 const meta = {
 	title: "Molecules/ListComment",
@@ -9,9 +9,9 @@ const meta = {
 		search: { control: "text" },
 		lists: { control: "object" },
 	},
-} satisfies Meta<typeof ListComment>
+} satisfies Meta<typeof ListComment>;
 
-export default meta
+export default meta;
 
 const lists = [
 	{
@@ -32,11 +32,11 @@ const lists = [
 		iframe: "https://gifmagazine.net/embed/glp/3916203",
 		href: "https://gifmagazine.net/post_images/3916203",
 	},
-]
+];
 
 export const Default = {
 	args: {
 		search: "comment",
 		lists: lists,
 	},
-}
+};

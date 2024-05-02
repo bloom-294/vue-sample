@@ -1,53 +1,40 @@
 <script setup lang="ts">
-	import { ref } from "vue"
-	import { List } from "../../../types/types"
-	import Button from "../../Atoms/Button/Button.vue"
+	import { ref } from "vue";
+	import { List } from "../../../types/types";
+	import Button from "../../Atoms/Button/Button.vue";
 
-	const search = defineModel()
+	const search = defineModel();
 
 	const addComments = ref<List>({
 		id: "",
 		comment: "",
 		iframe: "",
 		href: "",
-	})
+	});
 
 	const emits = defineEmits<{
-		(e: "submit", value: string): void
-	}>()
+		(e: "submit", value: string): void;
+	}>();
 
 	const OnSubmit = (value: string) => {
-		emits("submit", value)
+		emits("submit", value);
 
 		addComments.value = {
 			id: "",
 			comment: "",
 			iframe: "",
 			href: "",
-		}
-	}
+		};
+	};
 </script>
 
 <template>
-	<form
-		action="#"
-		class="list-form"
-		@submit.prevent="() => OnSubmit(addComments.comment)">
+	<form action="#" class="list-form" @submit.prevent="() => OnSubmit(addComments.comment)">
 		<div>
-			<input
-				type="text"
-				placeholder="投稿"
-				v-model="addComments.comment"
-				class="list-form-input is-post" />
+			<input type="text" placeholder="投稿" v-model="addComments.comment" class="list-form-input is-post" />
 			<Button text="post" type="other" size="small" />
 		</div>
-		<input
-			type="text"
-			name="search"
-			placeholder="絞り込み"
-			id="search"
-			v-model="search"
-			class="list-form-input is-search" />
+		<input type="text" name="search" placeholder="絞り込み" id="search" v-model="search" class="list-form-input is-search" />
 	</form>
 </template>
 

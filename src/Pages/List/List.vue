@@ -1,8 +1,8 @@
 <script setup lang="ts">
-	import { ref } from "vue"
-	import { List } from "../../types/types"
-	import ListComment from "../../components/Molecules/ListComment/ListComment.vue"
-	import ListForm from "../../components/Molecules/ListForm/ListForm.vue"
+	import { ref } from "vue";
+	import { List } from "../../types/types";
+	import ListComment from "../../components/Molecules/ListComment/ListComment.vue";
+	import ListForm from "../../components/Molecules/ListForm/ListForm.vue";
 
 	const lists = ref<List[]>([
 		{
@@ -23,13 +23,13 @@
 			iframe: "https://gifmagazine.net/embed/glp/3916203",
 			href: "https://gifmagazine.net/post_images/3916203",
 		},
-	])
+	]);
 
-	const listLastId = ref(0)
-	const search = ref("")
+	const listLastId = ref(0);
+	const search = ref("");
 
 	const OnSubmit = (comment: string) => {
-		listLastId.value = Number(lists.value[lists.value.length - 1].id)
+		listLastId.value = Number(lists.value[lists.value.length - 1].id);
 
 		lists.value = [
 			...lists.value,
@@ -39,14 +39,14 @@
 				iframe: "https://gifmagazine.net/embed/glp/3937585",
 				href: "https://gifmagazine.net/post_images/3937585",
 			},
-		]
+		];
 
-		console.table(lists.value)
-	}
+		console.table(lists.value);
+	};
 
 	const onDelete = (id: string) => {
-		lists.value = lists.value.filter((list) => list.id !== id)
-	}
+		lists.value = lists.value.filter((list) => list.id !== id);
+	};
 </script>
 
 <template>

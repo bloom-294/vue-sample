@@ -1,18 +1,18 @@
 <script setup lang="ts">
-	import { computed } from "vue"
+	import { computed } from "vue";
 
 	const props = defineProps<{
-		label?: string
-		shadow?: boolean
-		color?: "primary" | "secondary" | "other"
-		size?: "small" | "medium" | "large"
-	}>()
+		label?: string;
+		shadow?: boolean;
+		color?: "primary" | "secondary" | "other";
+		size?: "small" | "medium" | "large";
+	}>();
 
 	const classes = computed(() => ({
 		"is-shadow": !props.shadow,
 		[`button-${props.color}`]: true,
 		[`is-${props.size || `medium`}`]: true,
-	}))
+	}));
 </script>
 
 <template>

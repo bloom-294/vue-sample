@@ -1,20 +1,20 @@
 <script setup lang="ts">
 	const props = defineProps<{
-		modalFlag: Boolean
-		merchandiseName?: String
-		text?: String
-		teleportFlag?: boolean
-	}>()
+		modalFlag: Boolean;
+		merchandiseName?: String;
+		text?: String;
+		teleportFlag?: boolean;
+	}>();
 
-	const emit = defineEmits(["close"])
+	const emit = defineEmits(["close"]);
 
 	const OnModalClose = (flag: Boolean) => {
 		if (flag) {
-			emit("close")
+			emit("close");
 		} else {
-			return
+			return;
 		}
-	}
+	};
 </script>
 
 <template>
@@ -22,20 +22,9 @@
 		<div v-if="props.modalFlag">
 			<div class="modal-mask" @click="OnModalClose(true)">
 				<div class="modal-container" @click="OnModalClose(false)">
-					<iframe
-						src="https://gifmagazine.net/embed/glp/2999024"
-						width="300"
-						height="225"
-						frameBorder="0"
-						class="gifmagazine-embed modal-gif"
-						allowFullScreen></iframe>
+					<iframe src="https://gifmagazine.net/embed/glp/2999024" width="300" height="225" frameBorder="0" class="gifmagazine-embed modal-gif" allowFullScreen></iframe>
 					<p>
-						<a
-							href="https://gifmagazine.net/post_images/2999024"
-							target="_blank"
-							class="modal-link">
-							via GIFMAGAZINE
-						</a>
+						<a href="https://gifmagazine.net/post_images/2999024" target="_blank" class="modal-link">via GIFMAGAZINE</a>
 					</p>
 					<div class="modal-sentence" v-if="text == null">
 						谢谢🫧
@@ -45,12 +34,7 @@
 					<div class="modal-sentence" v-else>
 						{{ props.text }}
 					</div>
-					<button
-						type="button"
-						class="modal-button"
-						@click="OnModalClose(true)">
-						OK
-					</button>
+					<button type="button" class="modal-button" @click="OnModalClose(true)">OK</button>
 				</div>
 			</div>
 		</div>
