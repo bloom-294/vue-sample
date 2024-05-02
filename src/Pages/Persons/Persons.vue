@@ -27,8 +27,8 @@ const Delete = (id :number) => {
 </script>
 
 <template>
-  <div>
-    <h1>Persons</h1>
+  <div class="persons">
+    <h1 class="persons-title">Persons</h1>
     <div class="persons-container">
       <PersonPostForm @register="Register" />
       <div class="persons-container-list">
@@ -41,12 +41,16 @@ const Delete = (id :number) => {
 </template>
 
 <style scoped lang="scss">
-.persons-container {
-  display: flex;
-  justify-content: center;
-
-  &-list {
-    margin: 0 50px;
+.persons {
+  text-align: center;
+  
+  &-container {
+    display: flex;
+    justify-content: center;
+    
+    &-list {
+      margin: 0 50px;
+    }
   }
 }
 
