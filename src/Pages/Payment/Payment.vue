@@ -148,7 +148,6 @@ h2 {
   flex-direction: column;
   align-items: center;
   border-radius: 24px;
-  background-color: #fff;
   text-align: center;
 }
 
