@@ -1,36 +1,38 @@
 <script setup lang="ts">
-import { Person }  from "../../../types/types";
+	import { Person } from "../../../types/types"
 
-defineProps<{
-  persons: Person[];
-}>();
+	defineProps<{
+		persons: Person[]
+	}>()
 
-const emit = defineEmits(["delete"]);
+	const emit = defineEmits(["delete"])
 
-const OnClickDelete = ( id:number ): void => {
-  emit("delete", id);
-}
-
+	const OnClickDelete = (id: number): void => {
+		emit("delete", id)
+	}
 </script>
 
 <template>
-  <li v-for="person in $props.persons" :key="person.id" class="persons-list">
-    <span>{{ person.name }}</span>
-    <span>age: {{ person.age }}</span>
-    <button type="button" @click="OnClickDelete(person.id)">
-      <span>Delete</span>
-    </button>
-  </li>
-
+	<li
+		v-for="person in $props.persons"
+		:key="person.id"
+		class="persons-list">
+		<span>{{ person.name }}</span>
+		<span>age: {{ person.age }}</span>
+		<button
+			type="button"
+			@click="OnClickDelete(person.id)">
+			<span>Delete</span>
+		</button>
+	</li>
 </template>
 
 <style scoped lang="scss">
-.persons-list {
-  margin: 12px 0;
+	.persons-list {
+		margin: 12px 0;
 
-  & button {
-    margin: 0 20px;
-  }
-}
-
+		& button {
+			margin: 0 20px;
+		}
+	}
 </style>
