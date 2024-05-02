@@ -15,12 +15,8 @@
 <template>
 	<section class="payment">
 		<ul>
-			<li
-				v-for="merchandise in props.shoppingList"
-				key="merchandise">
-				<img
-					:src="merchandise.img"
-					alt="apple" />
+			<li v-for="merchandise in props.shoppingList" key="merchandise">
+				<img :src="merchandise.img" alt="apple" />
 				<a
 					v-bind:href="merchandise.url"
 					target="_blank"

@@ -16,10 +16,7 @@
 </script>
 
 <template>
-	<button
-		type="button"
-		class="button"
-		:class="classes">
+	<button type="button" class="button" :class="classes">
 		{{ label || "Button" }}
 	</button>
 </template>

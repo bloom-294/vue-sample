@@ -35,11 +35,7 @@
 						class="gifmagazine-embed"
 						allowFullScreen></iframe>
 					<p>
-						<a
-							:href="list.href"
-							target="_blank">
-							via GIFMAGAZINE
-						</a>
+						<a :href="list.href" target="_blank">via GIFMAGAZINE</a>
 					</p>
 				</div>
 				<div>

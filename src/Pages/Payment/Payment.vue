@@ -86,9 +86,7 @@
 	<Circle :flag="false" />
 	<div class="payment-container">
 		<h1>购物便条🧺</h1>
-		<PaymentContainer
-			:shoppingList="shoppingList"
-			@click="ClickHandler" />
+		<PaymentContainer :shoppingList="shoppingList" @click="ClickHandler" />
 		<Circle :flag="true" />
 
 		<Modal
@@ -122,18 +120,12 @@
 					class="comment-input"
 					@input="InputHandler"
 					v-model="messages" />
-				<button
-					type="button"
-					class="comment-button"
-					@click="Reset">
+				<button type="button" class="comment-button" @click="Reset">
 					评论
 				</button>
 			</form>
 			<ul class="comment-table">
-				<li
-					class="comment-sentence"
-					v-for="key in 12"
-					:key="key">
+				<li class="comment-sentence" v-for="key in 12" :key="key">
 					<div class="comment-sentence-gif">
 						<iframe
 							src="https://gifmagazine.net/embed/glp/4587905"

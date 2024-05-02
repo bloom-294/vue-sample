@@ -52,13 +52,8 @@
 <template>
 	<section class="list-container">
 		<h1>🍪</h1>
-		<ListForm
-			@submit="OnSubmit"
-			v-model="search" />
-		<ListComment
-			:lists="lists"
-			:search="search"
-			@delete="onDelete" />
+		<ListForm @submit="OnSubmit" v-model="search" />
+		<ListComment :lists="lists" :search="search" @delete="onDelete" />
 	</section>
 </template>
 

@@ -39,10 +39,7 @@
 				placeholder="投稿"
 				v-model="addComments.comment"
 				class="list-form-input is-post" />
-			<Button
-				text="post"
-				type="other"
-				size="small" />
+			<Button text="post" type="other" size="small" />
 		</div>
 		<input
 			type="text"

@@ -30,9 +30,7 @@
 			<PersonPostForm @register="Register" />
 			<div class="persons-container-list">
 				<ul>
-					<PersonList
-						:persons="persons"
-						@delete="Delete" />
+					<PersonList :persons="persons" @delete="Delete" />
 				</ul>
 			</div>
 		</div>

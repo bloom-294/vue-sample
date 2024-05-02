@@ -20,16 +20,9 @@
 </script>
 
 <template>
-	<div
-		class="circle"
-		:class="classes">
-		<div
-			v-for="key in 10"
-			:key="key">
-			<img
-				class="circle-img"
-				:src="objectUrl"
-				:alt="props.object" />
+	<div class="circle" :class="classes">
+		<div v-for="key in 10" :key="key">
+			<img class="circle-img" :src="objectUrl" :alt="props.object" />
 		</div>
 	</div>
 </template>

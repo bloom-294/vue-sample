@@ -13,15 +13,10 @@
 </script>
 
 <template>
-	<li
-		v-for="person in $props.persons"
-		:key="person.id"
-		class="persons-list">
+	<li v-for="person in $props.persons" :key="person.id" class="persons-list">
 		<span>{{ person.name }}</span>
 		<span>age: {{ person.age }}</span>
-		<button
-			type="button"
-			@click="OnClickDelete(person.id)">
+		<button type="button" @click="OnClickDelete(person.id)">
 			<span>Delete</span>
 		</button>
 	</li>

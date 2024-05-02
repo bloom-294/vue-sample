@@ -18,16 +18,10 @@
 </script>
 
 <template>
-	<Teleport
-		to="body"
-		:disabled="teleportFlag">
+	<Teleport to="body" :disabled="teleportFlag">
 		<div v-if="props.modalFlag">
-			<div
-				class="modal-mask"
-				@click="OnModalClose(true)">
-				<div
-					class="modal-container"
-					@click="OnModalClose(false)">
+			<div class="modal-mask" @click="OnModalClose(true)">
+				<div class="modal-container" @click="OnModalClose(false)">
 					<iframe
 						src="https://gifmagazine.net/embed/glp/2999024"
 						width="300"
@@ -43,16 +37,12 @@
 							via GIFMAGAZINE
 						</a>
 					</p>
-					<div
-						class="modal-sentence"
-						v-if="text == null">
+					<div class="modal-sentence" v-if="text == null">
 						谢谢🫧
 						<span>{{ props.merchandiseName }}</span>
 						也是高兴&nbsp;🎉✨
 					</div>
-					<div
-						class="modal-sentence"
-						v-else>
+					<div class="modal-sentence" v-else>
 						{{ props.text }}
 					</div>
 					<button
