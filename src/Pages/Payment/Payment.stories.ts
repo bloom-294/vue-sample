@@ -4,7 +4,6 @@ import Payment from "./Payment.vue";
 const meta = {
   title: "Pages/Payment",
   component: Payment,
-  tags: ["autodocs"],
 } satisfies Meta<typeof Payment>;
 
 export default meta;
