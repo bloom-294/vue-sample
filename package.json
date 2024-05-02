@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic"
+    "chromatic": "chromatic",
+    "format": "npx prettier . --write"
   },
   "dependencies": {
     "@storybook/vue3-vite": "^8.0.9",
@@ -26,6 +27,7 @@
     "@storybook/test": "^8.0.9",
     "@storybook/vue3": "^8.0.9",
     "@vitejs/plugin-vue": "^5.0.4",
+    "prettier": "^3.2.5",
     "sass": "^1.74.1",
     "sass-loader": "^10.5.2",
     "storybook": "^8.0.9",
