@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import App from '../App.vue';
-import Payment from '../Pages/Payment.vue';
-import List from '../Pages/List.vue';
-import Persons from '../Pages/Persons.vue';
+import Payment from '../Pages/Payment/Payment.vue';
+import List from '../Pages/List/List.vue';
+import Persons from '../Pages/Persons/Persons.vue';
 
 // ルーティング情報
 const routes = [
