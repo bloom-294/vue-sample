@@ -1,11 +1,11 @@
-import type { Meta } from "@storybook/vue3"
-import Payment from "./Payment.vue"
+import type { Meta } from "@storybook/vue3";
+import Payment from "./Payment.vue";
 
 const meta = {
 	title: "Pages/Payment",
 	component: Payment,
-} satisfies Meta<typeof Payment>
+} satisfies Meta<typeof Payment>;
 
-export default meta
+export default meta;
 
-export const Default = {}
+export const Default = {};

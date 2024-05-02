@@ -1,8 +1,8 @@
 <script setup lang="ts">
-	import { Ref, ref } from "vue"
-	import { Person } from "../../types/types"
-	import PersonList from "../../components/Organisms/PersonList/PersonList.vue"
-	import PersonPostForm from "../../components/Organisms/PersonPostForm/PersonPostForm.vue"
+	import { Ref, ref } from "vue";
+	import { Person } from "../../types/types";
+	import PersonList from "../../components/Organisms/PersonList/PersonList.vue";
+	import PersonPostForm from "../../components/Organisms/PersonPostForm/PersonPostForm.vue";
 
 	const persons: Ref<Person[]> = ref([
 		{ id: 0, name: "billy", age: 11 },
@@ -12,15 +12,15 @@
 		{ id: 4, name: "candy", age: 55 },
 		{ id: 5, name: "spector", age: 66 },
 		{ id: 6, name: "steven", age: 77 },
-	])
+	]);
 
 	const Register = (person: Person) => {
-		persons.value.push(person)
-	}
+		persons.value.push(person);
+	};
 
 	const Delete = (id: number) => {
-		persons.value = persons.value.filter((e) => e.id !== id)
-	}
+		persons.value = persons.value.filter((e) => e.id !== id);
+	};
 </script>
 
 <template>

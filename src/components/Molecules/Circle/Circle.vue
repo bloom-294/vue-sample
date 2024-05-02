@@ -1,18 +1,18 @@
 <script setup lang="ts">
-	import { computed } from "vue"
-	import CircleMaterial from "../../Atoms/CircleMaterial/CircleMaterial.vue"
+	import { computed } from "vue";
+	import CircleMaterial from "../../Atoms/CircleMaterial/CircleMaterial.vue";
 
 	const props = defineProps<{
-		flag: boolean
-	}>()
+		flag: boolean;
+	}>();
 
 	const classes = computed(() => {
 		if (props.flag) {
-			return "circle-down"
+			return "circle-down";
 		} else {
-			return
+			return;
 		}
-	})
+	});
 </script>
 
 <template>

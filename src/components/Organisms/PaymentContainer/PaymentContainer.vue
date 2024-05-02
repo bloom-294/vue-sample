@@ -1,15 +1,15 @@
 <script setup lang="ts">
 	const props = defineProps<{
-		shoppingList: any
-	}>()
+		shoppingList: any;
+	}>();
 
 	const emits = defineEmits<{
-		(e: "click", value: string): void
-	}>()
+		(e: "click", value: string): void;
+	}>();
 
 	const ClickHandler = (value: string) => {
-		emits("click", value)
-	}
+		emits("click", value);
+	};
 </script>
 
 <template>
@@ -17,19 +17,11 @@
 		<ul>
 			<li v-for="merchandise in props.shoppingList" key="merchandise">
 				<img :src="merchandise.img" alt="apple" />
-				<a
-					v-bind:href="merchandise.url"
-					target="_blank"
-					rel="noreferrer"
-					title="前往购买网站">
+				<a v-bind:href="merchandise.url" target="_blank" rel="noreferrer" title="前往购买网站">
 					{{ merchandise.name }}
 				</a>
 				<form action="#">
-					<button
-						type="button"
-						@click="ClickHandler(merchandise.name)">
-						购买
-					</button>
+					<button type="button" @click="ClickHandler(merchandise.name)">购买</button>
 				</form>
 			</li>
 		</ul>

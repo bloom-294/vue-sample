@@ -1,5 +1,5 @@
-import type { Meta } from "@storybook/vue3"
-import PaymentContainer from "./PaymentContainer.vue"
+import type { Meta } from "@storybook/vue3";
+import PaymentContainer from "./PaymentContainer.vue";
 
 const meta = {
 	title: "Organisms/PaymentContainer",
@@ -8,9 +8,9 @@ const meta = {
 	argTypes: {
 		shoppingList: { control: "object" },
 	},
-} satisfies Meta<typeof PaymentContainer>
+} satisfies Meta<typeof PaymentContainer>;
 
-export default meta
+export default meta;
 
 const shoppingList = [
 	{
@@ -31,10 +31,10 @@ const shoppingList = [
 		url: "https://hitohana.tokyo/dryflower/dry-flower-swag-blue-1",
 		img: "https://images.unsplash.com/photo-1639843606783-b2f9c50a7468?q=80&w=3173&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 	},
-]
+];
 
 export const Default = {
 	args: {
 		shoppingList: shoppingList,
 	},
-}
+};

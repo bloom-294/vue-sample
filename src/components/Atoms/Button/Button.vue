@@ -1,53 +1,49 @@
 <script setup lang="ts">
-	import { computed } from "vue"
+	import { computed } from "vue";
 
 	const props = defineProps<{
-		text?: string
-		type?: "primary" | "secondary" | "other"
-		size?: "small" | "medium" | "large"
-	}>()
+		text?: string;
+		type?: "primary" | "secondary" | "other";
+		size?: "small" | "medium" | "large";
+	}>();
 
 	const types = computed(() => {
 		switch (props.type) {
 			case "primary":
-				return "is-primary"
+				return "is-primary";
 			case "secondary":
-				return "is-secondary"
+				return "is-secondary";
 			case "other":
-				return "is-other"
+				return "is-other";
 			default:
-				break
+				break;
 		}
-	})
+	});
 
 	const sizes = computed(() => {
 		switch (props.size) {
 			case "small":
-				return "is-small"
+				return "is-small";
 			case "medium":
-				return "is-medium"
+				return "is-medium";
 			case "large":
-				return "is-large"
+				return "is-large";
 			default:
-				break
+				break;
 		}
-	})
+	});
 
 	const emits = defineEmits<{
-		(e: "onClick"): void
-	}>()
+		(e: "onClick"): void;
+	}>();
 
 	const onClick = () => {
-		emits("onClick")
-	}
+		emits("onClick");
+	};
 </script>
 
 <template>
-	<button
-		type="submit"
-		class="button"
-		:class="[types, sizes]"
-		@click="onClick">
+	<button type="submit" class="button" :class="[types, sizes]" @click="onClick">
 		{{ props.text || "Button" }}
 	</button>
 </template>

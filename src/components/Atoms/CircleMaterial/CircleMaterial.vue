@@ -1,22 +1,22 @@
 <script setup lang="ts">
-	import { computed } from "vue"
+	import { computed } from "vue";
 
 	const props = defineProps<{
-		label?: string
-		object: "greenPepper" | "okura"
-	}>()
+		label?: string;
+		object: "greenPepper" | "okura";
+	}>();
 
 	const classes = computed(() => ({
 		"circle-okura": props.object == "okura",
-	}))
+	}));
 
 	const objectUrl = computed(() => {
 		if (props.object == "greenPepper") {
-			return "https://www.yaohiko.co.jp/isshoumochi/assets/img/index/kv/illusts/pc/1x/b-kv_illust01.png.webp"
+			return "https://www.yaohiko.co.jp/isshoumochi/assets/img/index/kv/illusts/pc/1x/b-kv_illust01.png.webp";
 		} else {
-			return "https://www.yaohiko.co.jp/isshoumochi/assets/img/index/kv/illusts/pc/1x/b-kv_illust09.png.webp"
+			return "https://www.yaohiko.co.jp/isshoumochi/assets/img/index/kv/illusts/pc/1x/b-kv_illust09.png.webp";
 		}
-	})
+	});
 </script>
 
 <template>
