@@ -42,7 +42,7 @@ const onClick = () => {
 </script>
 
 <template>
-  <button type="submit" class="button" :class="types, sizes" @click="onClick">{{ props.text || "Button" }}</button>
+  <button type="button" class="button" :class="types, sizes" @click="onClick">{{ props.text || "Button" }}</button>
 </template>
 
 <style scoped lang="scss">
