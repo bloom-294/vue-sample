@@ -70,5 +70,6 @@ const onDelete = (id: string) => {
   width: 80vw;
   border-radius: 30px;
   padding: 30px 0;
+  text-align: center;
 }
 </style>
