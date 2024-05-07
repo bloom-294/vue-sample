@@ -65,72 +65,71 @@ const DirListAdd = async () => {
 };
 
 (async () => {
-    try {
-	const confirm = await prompts({
-		type: "confirm",
-		name: "value",
-		message: "ディレクトリは作成しましたか？",
-		initial: true,
-	});
+	try {
+		const confirm = await prompts({
+			type: "confirm",
+			name: "value",
+			message: "ディレクトリは作成しましたか？",
+			initial: true,
+		});
 
-	if (confirm.value == true) {
-		console.log(confirm.value);
-	} else {
-		console.error("作成してください");
-		return exit;
-	}
+		if (confirm.value == true) {
+			console.log(confirm.value);
+		} else {
+			console.error("作成してください");
+			return exit;
+		}
 
-	const select_dir = await prompts({
-		type: "select",
-		name: "value",
-		message: "選択してください",
-		choices: [
-			{ title: "./src/Pages", value: "Pages" },
-			{ title: "./src/components", value: "components" },
-		],
-		initial: 0,
-	});
-
-	dir = `${select_dir.value}`;
-	dir_search = fs.readdirSync(`./src/${dir}`);
-
-	DirListAdd();
-
-	const selectChild = await prompts({
-		type: "select",
-		name: "value",
-		message: "",
-		choices: dir_list,
-		initial: 0,
-	});
-
-	//   Pages
-	if (dir == "Pages") {
-		component = selectChild.value;
-		createStory(true);
-
-		//   components
-	} else {
-		dir_2 = selectChild.value;
-		path = `./src/${dir}/${dir_2}/`;
-		dir_search = fs.readdirSync(path);
-
-		dir_list = [];
-		DirListAdd();
-
-		const selectGchild = await prompts({
+		const select_dir = await prompts({
 			type: "select",
 			name: "value",
 			message: "選択してください",
+			choices: [
+				{ title: "./src/Pages", value: "Pages" },
+				{ title: "./src/components", value: "components" },
+			],
+			initial: 0,
+		});
+
+		dir = `${select_dir.value}`;
+		dir_search = fs.readdirSync(`./src/${dir}`);
+
+		DirListAdd();
+
+		const selectChild = await prompts({
+			type: "select",
+			name: "value",
+			message: "",
 			choices: dir_list,
 			initial: 0,
 		});
 
-		component = selectGchild.value;
-		createStory(false);
-	}
+		//   Pages
+		if (dir == "Pages") {
+			component = selectChild.value;
+			createStory(true);
 
-} catch {
-    console.log("exit");
-  }
+			//   components
+		} else {
+			dir_2 = selectChild.value;
+			path = `./src/${dir}/${dir_2}/`;
+			dir_search = fs.readdirSync(path);
+
+			dir_list = [];
+			DirListAdd();
+
+			const selectGchild = await prompts({
+				type: "select",
+				name: "value",
+				message: "選択してください",
+				choices: dir_list,
+				initial: 0,
+			});
+
+			component = selectGchild.value;
+			createStory(false);
+		}
+	} catch {
+		console.log("exit");
+	}
 })();
