@@ -38,19 +38,24 @@ const createStory = (broadFlag) => {
     dir_search = fs.readdirSync(path);
     
     if(dir_search.includes(`${component}.stories.ts`)) {
-        console.error("storyは存在しています。");
+        console.error("もう既に存在しています");
         return exit;
     }else {
         path = `${path}${component}.stories.ts`;
         
         fs.writeFile(path, template(dir,component), function (err) {
             if (err) {
-                console.error("作成できませんでした。")
+                console.error("❌")
                 throw err;
             }
         });
-        console.log("作成しました✨🍪")
-        console.log(path);
+
+        console.log(`
+        🎉✨success✨🎉
+
+           🍪 ${path}
+        `);
+        
     }
 }
 
@@ -64,21 +69,21 @@ const DirListAdd = async() => {
     const confirm = await prompts({
         type: 'confirm',
         name: 'value',
-        message: 'ディレクトリは作成しましたか?',
+        message: 'ディレクトリは作成しましたか？',
         initial: true
     });
     
     if(confirm.value == true) {
         console.log(confirm.value);
     } else {
-        console.error("ディレクトリを作成してください");
+        console.error("作成してください");
         return exit;
     }
 
     const select_dir = await prompts({
         type: 'select',
         name: 'value',
-        message: 'ディレクトリを選択してください。',
+        message: '選択してください',
         choices: [
           { title: './src/Pages',  value: 'Pages' },
           { title: './src/components', value: 'components' },
@@ -94,7 +99,7 @@ const DirListAdd = async() => {
       const selectChild = await prompts({
           type: 'select',
           name: 'value',
-          message: '選択してください。',
+          message: '',
           choices: dir_list,
           initial: 0
         });
@@ -118,7 +123,7 @@ const DirListAdd = async() => {
         const selectGchild = await prompts({
             type: 'select',
             name: 'value',
-            message: '選択してください。',
+            message: '選択してください',
             choices: dir_list,
             initial: 0
           });

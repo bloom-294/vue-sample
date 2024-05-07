@@ -11,7 +11,7 @@
     "build-storybook": "storybook build",
     "chromatic": "chromatic",
     "format": "npx prettier . --write ./src/*",
-    "createStory": "node mkdir_stories.cjs"
+    "createStory": "node bin/mkdir_stories.cjs"
   },
   "dependencies": {
     "@storybook/vue3-vite": "^8.0.9",
