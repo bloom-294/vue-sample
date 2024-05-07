@@ -1,11 +1,19 @@
 #!/usr/bin/env node
-'use strict';
+"use strict";
 
-const fs = require('fs');
+const fs = require("fs");
+const { exit } = require("process");
+const prompts = require('prompts');
 
-const template = (dir,file) => {
-    return(
-        `
+let dir = ""
+let dir_2 = ""
+let dir_search = "";
+let dir_list = [];
+let path = "";
+let component = "";
+
+const template = (dir, file) => {
+	return `
         import type { Meta } from "@storybook/vue3";
         import ${file} from "./${file}.vue";
         
@@ -17,112 +25,105 @@ const template = (dir,file) => {
         export default meta;
         
         export const Default = {};
-        `
-    )
+        `;
+};
+
+const createStory = (broadFlag) => {
+    if(broadFlag == true) {
+        path = `./src/${dir}/${component}/`;
+    }else {
+        path = `./src/${dir}/${dir_2}/${component}/`;
+    }
+    
+    dir_search = fs.readdirSync(path);
+    
+    if(dir_search.includes(`${component}.stories.ts`)) {
+        console.error("storyは存在しています。");
+        return exit;
+    }else {
+        path = `${path}${component}.stories.ts`;
+        
+        fs.writeFile(path, template(dir,component), function (err) {
+            if (err) {
+                console.error("作成できませんでした。")
+                throw err;
+            }
+        });
+        console.log("作成しました✨🍪")
+        console.log(path);
+    }
 }
 
-// if(process.argv.length < 4) {
-//     console.log("引数が足りません。");
-// }else if (process.argv.length === 5) {
-//     fs.writeFile(`./src/${process.argv[2]}/${process.argv[3]}/${process.argv[4]}/${process.argv[4]}.stories.ts`, template(process.argv[3],process.argv[4]), function (err) {
-//         if (err) { 
-//             console.log("値を間違えている可能性があります。")
-//             throw err;
-//          }
-//     });
-//     console.log(`./src/${process.argv[2]}/${process.argv[3]}/${process.argv[4]}/${process.argv[4]}.stories.tsが作成されました`);
-// }else if (process.argv.length === 4) {
-//     fs.writeFile(`./src/${process.argv[2]}/${process.argv[3]}/${process.argv[3]}.stories.ts`, template(process.argv[2],process.argv[3]), function (err) {
-//         if (err) { 
-//             console.log("値を間違えている可能性があります。")
-//             throw err;
-//          }
-//     });
-//     console.log(`./src/${process.argv[2]}/${process.argv[3]}/${process.argv[3]}.stories.tsが作成されました`);
-// }
+const DirListAdd = async() => {
+    dir_search.forEach(e => {
+        dir_list.push( { title: e, value: e });
+    });  
+}
 
+(async () => {
+    const confirm = await prompts({
+        type: 'confirm',
+        name: 'value',
+        message: 'ディレクトリは作成しましたか?',
+        initial: true
+    });
+    
+    if(confirm.value == true) {
+        console.log(confirm.value);
+    } else {
+        console.error("ディレクトリを作成してください");
+        return exit;
+    }
 
-// let dir_1 ="";
-// let dir_2 ="";
-// let dir_name ="";
+    const select_dir = await prompts({
+        type: 'select',
+        name: 'value',
+        message: 'ディレクトリを選択してください。',
+        choices: [
+          { title: './src/Pages',  value: 'Pages' },
+          { title: './src/components', value: 'components' },
+        ],
+        initial: 0
+      });
 
+      dir = `${select_dir.value}`
+      dir_search = fs.readdirSync(`./src/${dir}`);
 
-// const readline = require('readline').createInterface({
-//     input: process.stdin,
-//     output: process.stdout
-//   });
+      DirListAdd();
+
+      const selectChild = await prompts({
+          type: 'select',
+          name: 'value',
+          message: '選択してください。',
+          choices: dir_list,
+          initial: 0
+        });
+        
+        
+    //   Pages
+        if(dir == "Pages") {
+
+        component = selectChild.value;   
+        createStory(true); 
+
+    //   components
+    } else {
+        dir_2 = selectChild.value;
+        path = `./src/${dir}/${dir_2}/`;
+        dir_search = fs.readdirSync(path);
+        
+        dir_list = [];
+        DirListAdd();
   
-//   readline.question('vueファイルとディレクトリは作成しましたか?（y/n） ', (answer) => {
+        const selectGchild = await prompts({
+            type: 'select',
+            name: 'value',
+            message: '選択してください。',
+            choices: dir_list,
+            initial: 0
+          });
 
-
-//     if(answer == "y" || answer == "yes"){
-//         console.log(`Hello, ${answer}!`);
-
-//         readline.question('ディレクトリを選択してください。Pages/components  (p/c) ', (answer) => {
-//             if(answer == "p" || answer == "Pages"){
-//                 dir_1 = "Pages";
-//                 readline.question('ファイル名を入力してください。', (answer) => {
-//                     dir_name = answer;
-//                     // 処理
-//                 });
-
-//             }else if(answer == "c" || answer == "components"){
-//                 dir_1 = "components";
-//                 readline.question('ディレクトリを選択してください。Atoms/Molecules/Organisms  (a/m/o)', (answer) => {
-//                     dir_2 = answer;
-//                     if(){
-//                         readline.question('ディレクトリを選択してください。Atoms/Molecules/Organisms  (a/m/o)', (answer) => {
-//                             dir_2 = answer;
-//                             // 処理
-//                         });
-//                     }
-//                 });
-//             }else {
-//                 console.log("始めからやり直してください。");
-//                 readline.close();
-//             }
-
-//         });
-
-
-
-
-//     }else if(answer == "n" || answer == "no"){
-//         console.log("作成してから実行してください。")
-//     }else{
-//         console.log("作成してから実行してください。")
-//     }
-//     readline.close();
-//   });
-
-
-//   readline.question('What is your name? ', (answer) => {
-//     console.log(`Hello, ${answer}!`);
-//     readline.close();
-//   });
-
-
-// console.log(process.argv[2]);
-
-// const files = fs.readdirSync('./src/components/');
-// console.log(files)
-
-
-// fs.readdir('./src/components', (err, files) => {
-//     if (err) { throw err; }
-
-//     files.forEach(file => {
-//         // let files = fs.readdirSync(`${file}`);
-//         console.log(file);
-//     });
-// });
-
-// import { glob } from 'glob';
-// const glob = require('glob');
-
-// glob('*', (err, files) => {
-//     files.forEach(file => {
-//         console.log(file);
-//     });
-// });
-
+        component = selectGchild.value;
+        createStory(false); 
+  }
+})();  
