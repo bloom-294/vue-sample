@@ -65,6 +65,7 @@ const DirListAdd = async () => {
 };
 
 (async () => {
+    try {
 	const confirm = await prompts({
 		type: "confirm",
 		name: "value",
@@ -128,4 +129,8 @@ const DirListAdd = async () => {
 		component = selectGchild.value;
 		createStory(false);
 	}
+
+} catch {
+    console.log("exit");
+  }
 })();
