@@ -50,18 +50,18 @@
 
 <style scoped lang="scss">
 	.button {
+		z-index: 10;
 		width: 120px;
 		height: auto;
-		border-radius: 12px;
-		background-color: #f3b8af;
-		color: #fff;
-		border: unset;
 		aspect-ratio: 15/4;
-		text-align: center;
-		font-size: 20px;
-		cursor: pointer;
 		padding: 10px;
-		z-index: 10;
+		font-size: 20px;
+		color: #fff;
+		text-align: center;
+		cursor: pointer;
+		background-color: #f3b8af;
+		border: unset;
+		border-radius: 12px;
 
 		&:hover {
 			background-color: #98b9d2;
@@ -71,20 +71,20 @@
 		&.is {
 			&-small {
 				width: 80px;
-				border-radius: 8px;
 				font-size: 16px;
+				border-radius: 8px;
 			}
 
 			&-medium {
 				width: 140px;
-				border-radius: 14px;
 				font-size: 24px;
+				border-radius: 14px;
 			}
 
 			&-large {
 				width: 200px;
-				border-radius: 20px;
 				font-size: 28px;
+				border-radius: 20px;
 			}
 
 			&-primary {
@@ -104,8 +104,8 @@
 			}
 
 			&-other {
-				background-color: #e9c872;
 				aspect-ratio: 1/1;
+				background-color: #e9c872;
 				border-radius: 100%;
 
 				&:hover {

@@ -45,24 +45,24 @@
 
 <style scoped lang="scss">
 	ul {
-		margin: auto;
-		padding: 0;
-		width: 80%;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start;
+		width: 80%;
+		padding: 0;
+		margin: auto;
 	}
 
 	.list-container-comment {
-		margin: 20px;
 		display: flex;
+		margin: 20px;
 		color: #f3b8af;
 
 		&-img {
 			width: 150px;
 			aspect-ratio: 1/1;
-			border-radius: 100%;
 			overflow: hidden;
+			border-radius: 100%;
 
 			iframe {
 				width: 150px;
