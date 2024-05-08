@@ -59,10 +59,10 @@
 
 <style scoped lang="scss">
 	.list-container {
-		margin: 20px auto;
 		width: 80vw;
-		border-radius: 30px;
 		padding: 30px 0;
+		margin: 20px auto;
 		text-align: center;
+		border-radius: 30px;
 	}
 </style>

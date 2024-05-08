@@ -23,12 +23,12 @@
 
 <style lang="scss" scoped>
 	.button {
-		border: unset;
+		height: auto;
+		aspect-ratio: 3/1;
+		margin: 20px;
 		color: #fff;
 		background-color: #bcc597;
-		height: auto;
-		margin: 20px;
-		aspect-ratio: 3/1;
+		border: unset;
 
 		&.is {
 			&-shadow {
@@ -61,8 +61,8 @@
 			}
 
 			&-other {
-				background-color: #fff;
 				color: #bcc597;
+				background-color: #fff;
 				border: 1px solid #bcc597;
 			}
 

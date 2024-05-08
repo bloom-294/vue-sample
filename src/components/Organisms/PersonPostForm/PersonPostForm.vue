@@ -42,20 +42,20 @@
 <style scoped lang="scss">
 	.post-container {
 		&-input {
-			color: #fff;
-			border-radius: 30px;
-			background-color: v-bind(primaryColor);
 			width: fit-content;
+			color: #fff;
+			background-color: v-bind(primaryColor);
+			border-radius: 30px;
 
 			Form {
 				padding: 10px;
 
 				& input {
 					height: 30px;
-					margin: 10px 5px;
-					border-radius: 30px;
-					color: #bcc597;
 					padding: 0 20px;
+					margin: 10px 5px;
+					color: #bcc597;
+					border-radius: 30px;
 				}
 			}
 		}

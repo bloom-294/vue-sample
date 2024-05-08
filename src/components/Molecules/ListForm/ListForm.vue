@@ -45,12 +45,12 @@
 
 		.list-form {
 			&-input {
-				border: 2px solid #000;
 				width: 300px;
 				height: 32px;
-				border-radius: 30px;
 				padding: 12px;
 				color: #98b9d2;
+				border: 2px solid #000;
+				border-radius: 30px;
 
 				&.is-search {
 					margin: auto 0;

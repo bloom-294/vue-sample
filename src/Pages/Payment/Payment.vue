@@ -124,98 +124,98 @@
 
 <style scoped lang="scss">
 	h1 {
+		z-index: 2;
 		width: 50vw;
 		padding: 10px 0 20px;
-		font-family: "秀英丸ゴシック L";
-		color: #bdc597;
 		margin-bottom: 70px;
-		z-index: 2;
+		font-family: "秀英丸ゴシック L";
 		font-size: 70px;
+		color: #bdc597;
 	}
 
 	h2 {
 		width: 50vw;
 		padding: 150px 0 20px;
-		font-family: "秀英丸ゴシック L";
-		color: #fff;
-		font-size: 50px;
 		margin: 0 auto;
+		font-family: "秀英丸ゴシック L";
+		font-size: 50px;
+		color: #fff;
 	}
 
 	.payment-container {
-		color: #3d3d3d;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		border-radius: 24px;
+		color: #3d3d3d;
 		text-align: center;
+		border-radius: 24px;
 	}
 
 	.comment {
-		background-color: #e9c872;
-		width: 90%;
-		height: 1000px;
-		border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;
 		display: flex;
 		flex-direction: column;
+		width: 90%;
+		height: 1000px;
 		overflow: hidden;
+		background-color: #e9c872;
+		border-radius: 50% 50% 50% 70% / 50% 50% 70% 60%;
 
 		.comment {
 			&-bubble {
 				position: absolute;
-				transform: translateX(420px) translateY(50px);
 				height: fit-content;
+				transform: translateX(420px) translateY(50px);
 
 				&-svg {
-					fill: #fff;
 					width: 200px;
 					height: auto;
+					fill: #fff;
 				}
 
 				&-message {
 					position: relative;
 					top: -80px;
 					left: 0px;
-					margin: 0;
-					padding: 0;
-					color: #98b9d2;
 					z-index: 99999;
+					padding: 0;
+					margin: 0;
+					color: #98b9d2;
 				}
 			}
 
 			&-input {
-				background-color: #fff;
-				border: unset;
 				width: 40%;
 				height: 50px;
-				border-radius: 30px;
 				padding: 0 20px;
 				color: #98b9d2;
+				background-color: #fff;
+				border: unset;
+				border-radius: 30px;
 			}
 
 			&-button {
 				position: relative;
 				left: -50px;
-				border-radius: 100%;
-				aspect-ratio: 1/1;
 				width: 80px;
+				aspect-ratio: 1/1;
+				border-radius: 100%;
 			}
 
 			&-table {
 				display: flex;
-				padding: 30px 0 0;
 				width: 90%;
+				padding: 30px 0 0;
 				animation: 20s linear infinite slideAnime 0.5s both;
 			}
 
 			&-sentence {
-				margin: 20px 10px;
-				border-radius: 100%;
 				width: 100%;
-				background-color: #fff;
 				min-width: 300px;
 				aspect-ratio: 1/1;
+				margin: 20px 10px;
 				overflow: hidden;
+				background-color: #fff;
+				border-radius: 100%;
 			}
 
 			&-table:hover {

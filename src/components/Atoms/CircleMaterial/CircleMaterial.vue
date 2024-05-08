@@ -53,9 +53,9 @@
 		}
 
 		&-okura {
-			height: 500px;
 			top: calc(-137px + 50px);
 			left: calc(-200px + 50px);
+			height: 500px;
 
 			div {
 				top: 0px;
@@ -65,8 +65,8 @@
 		}
 
 		&-img {
-			height: 100px;
 			width: auto;
+			height: 100px;
 		}
 	}
 

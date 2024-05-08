@@ -45,13 +45,13 @@
 	.modal {
 		&-mask {
 			position: fixed;
-			z-index: 900;
 			top: 0;
 			left: 0;
+			z-index: 900;
+			display: flex;
 			width: 100%;
 			height: 100%;
 			background-color: rgba(0, 0, 0, 0.5);
-			display: flex;
 			transition: opacity 0.3s ease;
 		}
 
@@ -59,19 +59,18 @@
 			position: fixed;
 			top: calc(50vh - 213px);
 			left: calc(50vw - 150px);
-			width: 300px;
-			height: 426px;
-			margin: auto;
-			padding: 20px 30px;
-			background-color: #fff;
-			border-radius: 2px;
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-			transition: all 0.3s ease;
-			border-radius: 30px;
+			z-index: 990;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			z-index: 990;
+			width: 300px;
+			height: 426px;
+			padding: 20px 30px;
+			margin: auto;
+			background-color: #fff;
+			border-radius: 30px;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+			transition: all 0.3s ease;
 		}
 
 		&-sentence {
@@ -79,21 +78,21 @@
 			text-align: center;
 
 			span {
-				color: #bcc597;
 				font-size: 30px;
+				color: #bcc597;
 			}
 		}
 
 		&-button {
-			font-size: 20px;
-			background-color: #bcc597;
-			color: #fff;
 			width: 120px;
 			height: 40px;
-			text-align: center;
-			border-radius: 12px;
 			margin: auto;
+			font-size: 20px;
+			color: #fff;
+			text-align: center;
 			cursor: pointer;
+			background-color: #bcc597;
+			border-radius: 12px;
 		}
 
 		&-button:hover {
@@ -102,14 +101,14 @@
 		}
 
 		&-gif {
-			border-radius: 25px;
 			margin: 0;
+			border-radius: 25px;
 		}
 
 		&-link {
-			color: #98b9d2;
 			padding: 0;
 			margin: 0;
+			color: #98b9d2;
 		}
 	}
 </style>
