@@ -27,7 +27,7 @@ export const Default: Story = {
 	args: {
 		text: "评论",
 	},
-	play: async ({ canvasElement }: any) => {
+	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
 		const submitButton = canvas.getByRole("button");
 		await userEvent.click(submitButton);
