@@ -1,6 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+	import Link from "./components/Molecules/Link/Link.vue";
+</script>
 
 <template>
+	<Link />
 	<section class="container">
 		<router-view />
 	</section>
