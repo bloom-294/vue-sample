@@ -26,6 +26,6 @@
 	.circle-down {
 		position: relative;
 		top: -320px;
-		right: -900px;
+		right: -850px;
 	}
 </style>

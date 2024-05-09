@@ -63,6 +63,7 @@ li {
 	margin: 0 auto;
 	text-align: center;
 	width: 100vw;
+	overflow: hidden;
 }
 
 @media (prefers-color-scheme: light) {
