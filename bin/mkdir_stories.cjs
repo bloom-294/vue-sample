@@ -14,17 +14,17 @@ let component = "";
 
 const template = (dir, file) => {
 	return `
-        import type { Meta } from "@storybook/vue3";
-        import ${file} from "./${file}.vue";
-        
-        const meta = {
-            title: "${dir}/${file}",
-            component: ${file},
-        } satisfies Meta<typeof ${file}>;
-        
-        export default meta;
-        
-        export const Default = {};
+import type { Meta } from "@storybook/vue3";
+import ${file} from "./${file}.vue";
+
+const meta = {
+		title: "${dir}/${file}",
+		component: ${file},
+} satisfies Meta<typeof ${file}>;
+
+export default meta;
+
+export const Default = {};
         `;
 };
 
@@ -43,7 +43,9 @@ const createStory = (broadFlag) => {
 	} else {
 		path = `${path}${component}.stories.ts`;
 
-		fs.writeFile(path, template(dir, component), function (err) {
+		let templateFn = broadFlag == true ? template(dir, component) : template(dir_2, component);
+
+		fs.writeFile(path, templateFn, function (err) {
 			if (err) {
 				console.error("❌");
 				throw err;
