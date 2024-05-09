@@ -13,6 +13,7 @@
 		position: fixed;
 		top: 20px;
 		right: 50px;
+		z-index: 100;
 		display: flex;
 
 		&-router {
