@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import Link from "./components/Molecules/Link/Link.vue";
-	import { SpeedInsights } from "@vercel/speed-insights/vue"
+	import { SpeedInsights } from "@vercel/speed-insights/vue";
 </script>
 
 <template>
