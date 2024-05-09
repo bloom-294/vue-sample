@@ -1,10 +1,29 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+	const linkList = [
+		{
+			id: 1,
+			path: "/",
+			text: "main",
+			class: "",
+		},
+		{
+			id: 2,
+			path: "/list",
+			text: "List",
+			class: "is-secondary",
+		},
+		{
+			id: 3,
+			path: "/persons",
+			text: "Persons",
+			class: "is-third",
+		},
+	];
+</script>
 
 <template>
 	<div class="link-container">
-		<router-link to="/" class="link-container-router">main</router-link>
-		<router-link to="/list" class="link-container-router is-secondary">List</router-link>
-		<router-link to="/persons" class="link-container-router is-third">Persons</router-link>
+		<router-link v-for="links in linkList" :to="links.path" class="link-container-router" :class="links.class" :key="links.id">{{ links.text }}</router-link>
 	</div>
 </template>
 
