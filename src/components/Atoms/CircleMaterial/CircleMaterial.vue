@@ -31,7 +31,7 @@
 	.circle {
 		position: absolute;
 		top: -130px;
-		left: -200px;
+		left: -300px;
 		height: 600px;
 		aspect-ratio: 1/1;
 		margin: 0;
@@ -54,7 +54,7 @@
 
 		&-okura {
 			top: calc(-137px + 50px);
-			left: calc(-200px + 50px);
+			left: calc(-300px + 50px);
 			height: 500px;
 
 			div {
