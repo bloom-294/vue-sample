@@ -1,8 +1,10 @@
 <script setup lang="ts">
-	import { computed, reactive, ref, onMounted } from "vue";
+	import { computed, ref, onMounted } from "vue";
 	import Circle from "../../components/Molecules/Circle/Circle.vue";
 	import Modal from "../../components/Molecules/Modal/Modal.vue";
 	import PaymentContainer from "../../components/Organisms/PaymentContainer/PaymentContainer.vue";
+	import Slide from "../../components/Molecules/Slide/Slide.vue";
+	import { List } from "../../types/types";
 
 	const shoppingList = ref([
 		{
@@ -25,20 +27,44 @@
 		},
 	]);
 
-	const commentList = reactive([
+	const commentList: List[] = [
 		{
 			id: 1,
-			message: "kale",
+			comment: "苹果树",
+			iframe: "https://gifmagazine.net/embed/glp/4587905",
+			href: "https://gifmagazine.net/post_images/4587905",
 		},
-		// {
-		//   id: 2,
-		//   message: "apple",
-		// },
-		// {
-		//   id: 3,
-		//   message: "",
-		// },
-	]);
+		{
+			id: 2,
+			comment: "苹果树",
+			iframe: "https://gifmagazine.net/embed/glp/4484697",
+			href: "https://gifmagazine.net/post_images/4484697",
+		},
+		{
+			id: 3,
+			comment: "苹果树",
+			iframe: "https://gifmagazine.net/embed/glp/4484693",
+			href: "https://gifmagazine.net/post_images/4484693",
+		},
+		{
+			id: 4,
+			comment: "苹果树",
+			iframe: "https://gifmagazine.net/embed/glp/3916203",
+			href: "https://gifmagazine.net/post_images/3916203",
+		},
+		{
+			id: 5,
+			comment: "苹果树",
+			iframe: "https://gifmagazine.net/embed/glp/3937585",
+			href: "https://gifmagazine.net/post_images/3937585",
+		},
+		{
+			id: 6,
+			comment: "苹果树",
+			iframe: "https://gifmagazine.net/embed/glp/4378007",
+			href: "https://gifmagazine.net/post_images/4378007",
+		},
+	];
 
 	const commentAddNumber = ref(0);
 	const messages = ref("这是好👌");
@@ -103,20 +129,12 @@
 				<input type="text" placeholder="Could you write your feeling?" class="comment-input" @input="InputHandler" v-model="messages" />
 				<button type="button" class="comment-button" @click="Reset">评论</button>
 			</form>
-			<ul class="comment-table">
-				<li class="comment-sentence" v-for="key in 12" :key="key">
-					<div class="comment-sentence-gif">
-						<iframe src="https://gifmagazine.net/embed/glp/4587905" width="300" height="300" frameBorder="0" class="gifmagazine-embed" allowFullScreen></iframe>
-						<p>
-							<a href="https://gifmagazine.net/post_images/4587905" target="_blank">via GIFMAGAZINE</a>
-						</p>
-					</div>
-				</li>
-			</ul>
 
-			<div class="comment-other">
-				<img class="comment-other-egg" src="https://www.yaohiko.co.jp/isshoumochi/assets/img/index/kv/illusts/pc/1x/b-kv_illust34.png.webp" alt="material" />
-				<img class="comment-other-material" src="https://www.yaohiko.co.jp/isshoumochi/assets/img/index/kv/illusts/pc/1x/b-kv_illust26.png.webp" alt="material" />
+			<Slide class="comment-slide" :lists="commentList" />
+
+			<div class="comment-character">
+				<img class="comment-character-egg" src="https://www.yaohiko.co.jp/isshoumochi/assets/img/index/kv/illusts/pc/1x/b-kv_illust34.png.webp" alt="material" />
+				<img class="comment-character-material" src="https://www.yaohiko.co.jp/isshoumochi/assets/img/index/kv/illusts/pc/1x/b-kv_illust26.png.webp" alt="material" />
 			</div>
 		</section>
 	</div>
@@ -201,61 +219,26 @@
 				border-radius: 100%;
 			}
 
-			&-table {
-				display: flex;
-				width: 90%;
-				padding: 30px 0 0;
-				animation: 20s linear infinite slideAnime 0.5s both;
-			}
-
-			&-sentence {
-				width: 100%;
-				min-width: 300px;
-				aspect-ratio: 1/1;
-				margin: 20px 10px;
-				overflow: hidden;
-				background-color: #fff;
-				border-radius: 100%;
-			}
-
-			&-table:hover {
-				animation-play-state: paused;
-			}
-
-			&-other {
+			&-character {
 				display: flex;
 				margin-left: 20px;
 				transform: translateY(364px);
 			}
 
-			&-table:hover ~ .comment-other {
-				animation: 1.3s linear testAnime;
+			&-slide:hover ~ .comment-character {
+				animation: 1.3s linear fadeIn;
 				animation-fill-mode: forwards;
 			}
 
-			&-other .comment-other-material {
+			&-character .comment-character-material {
 				width: 292px;
 				height: 166px;
 				aspect-ratio: 292 /166;
 			}
-
-			&-sentence-message {
-				transform: translateY(20px);
-			}
 		}
 	}
 
-	@keyframes slideAnime {
-		0% {
-			transform: translateX(-12.7%);
-		}
-
-		100% {
-			transform: translateX(-101%);
-		}
-	}
-
-	@keyframes testAnime {
+	@keyframes fadeIn {
 		0% {
 			transform: translateY(364px);
 		}
