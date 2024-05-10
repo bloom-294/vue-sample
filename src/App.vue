@@ -4,7 +4,7 @@
 </script>
 
 <template>
-	<SpeedInsights/>
+	<SpeedInsights />
 	<Link />
 	<section class="container">
 		<router-view />
