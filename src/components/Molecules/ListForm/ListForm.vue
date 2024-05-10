@@ -29,10 +29,10 @@
 </script>
 
 <template>
-	<form action="#" class="list-form" @submit.prevent="() => OnSubmit(addComments.comment)">
+	<form action="#" class="list-form">
 		<div>
 			<input type="text" placeholder="投稿" v-model="addComments.comment" class="list-form-input is-post" />
-			<Button text="post" type="other" size="small" />
+			<Button text="post" type="other" size="small" @click="OnSubmit(addComments.comment)" />
 		</div>
 		<input type="text" name="search" placeholder="絞り込み" id="search" v-model="search" class="list-form-input is-search" />
 	</form>
