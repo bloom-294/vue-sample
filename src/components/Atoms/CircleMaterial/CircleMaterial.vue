@@ -37,6 +37,10 @@
 		margin: 0;
 		animation: 100s linear infinite routeAnime;
 
+		@media (max-width: 1200px) { 
+			display: none;
+		}
+
 		div {
 			position: absolute;
 			top: 0;
